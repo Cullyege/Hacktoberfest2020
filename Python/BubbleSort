@@ -1,0 +1,21 @@
+# Bubble sort 
+
+# We use boolean becoz if list is previously sorted then to reduce the 
+# ith iteration we use boolean operator it will increases the optimization
+
+def bubbleSort(arr):
+  for i in range(0,len(arr)-1):
+    sorted=True                     # boolean use for more optimization
+    for j in range(0,len(arr)-1-i): # i use for more optimization
+      if arr[j]>arr[j+1]:
+        arr[j],arr[j+1]=arr[j+1],arr[j]
+        sorted=False
+    
+    if sorted:
+      break    
+      
+  return arr      
+
+arr=[int(x) for x in input().split()]
+bubbleSort(arr)
+print(arr)
