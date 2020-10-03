@@ -1,36 +1,34 @@
 #include <iostream>
-#include <algorithm>
-using namespace std;
 
-void bubbleSort(int arr[], int n) 
-{ 
-   int i, j; 
-   bool swapp; 
-   for (i = 0; i < n-1; i++) 
-   { 
-     swapp = false; 
-     for (j = 0; j < n-i-1; j++) 
-     { 
-        if (arr[j] > arr[j+1]) 
-        { 
-           swap(arr[j], arr[j+1]); 
-           swapp = true; 
-        } 
-     }  
-     if (swapp == false) 
-        break; 
-   } 
-} 
-  void printArray(int arr[], int n) 
-{ 
-    int i; 
-    for (i=0; i < n; i++) 
-        cout<<arr[i]<<" "; 
+using namespace std;
+void swap(int *xp, int *yp)  
+{  
+    int temp = *xp;  
+    *xp = *yp;  
+    *yp = temp;  
+}  
+void bubbleSort(int arr[], int n)  
+{  
+    int i, j;  
+    for (i = 0; i < n-1; i++)      
+      
+    for (j = 0; j < n-i-1; j++)  
+        if (arr[j] > arr[j+1])  
+            swap(&arr[j], &arr[j+1]);  
+}  
+  
+void printArray(int arr[], int size)  
+{  
+    int i;  
+    for (i = 0; i < size; i++)  
+        cout << arr[i] << " ";  
+    cout << endl;  
 }  
 int main() 
-{ int n;
+{ 
+int n;
 cin>>n;
-    int arr[1000000];
+    int arr[n];
     for(int i=0;i<n;i++)
     {cin>>arr[i];
 	}
@@ -38,4 +36,3 @@ cin>>n;
     printArray(arr, n); 
     return 0; 
 } 
-© 2020 GitHub, Inc.
