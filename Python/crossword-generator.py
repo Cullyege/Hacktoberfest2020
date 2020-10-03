@@ -5,7 +5,7 @@ import sys
 
 for letter in A:
     if letter in B:
-        # x and y values for where the words intersect each other
+        # x and y values for where the words intersect each other for the first time
         x = A.index(letter)  # x is where B intersect A
         y = B.index(letter)  # y is where A intersects B
         break
