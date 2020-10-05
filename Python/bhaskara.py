@@ -1,8 +1,8 @@
 import math
 
-a = ("a: ")
-b = ("b: ")
-c = ("c: ")
+a = float(input("\na: "))
+b = float(input("b: "))
+c = float(input("c: "))
 
 delta=(b**2)-(4*a*c)
 if delta<0 or a==0:
