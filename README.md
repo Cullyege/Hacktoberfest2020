@@ -8,6 +8,8 @@
 
 ### This is a beginner-friendly repo to help you in open-source contributions. Made specifically for HACKTOBERFEST 2020!
 
+### Please check first if your code is already present in this repo, if it's already there then don't add that!
+
 ### How to create pull requests (PRs)?
   1. Sign up or sign in to your <a href="https://github.com/"> Github </a> account.
   2. Register yourself at <a href="https://hacktoberfest.digitalocean.com/"> Hactoberfest 2020 </a> using your Github account.

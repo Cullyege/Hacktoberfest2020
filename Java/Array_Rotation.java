@@ -72,11 +72,11 @@ class Array_Rotation
                 }
             default:
                 {
-                    System.out.println("Enter correct choice(1 / 2)";
+                    System.out.println("Enter correct choice(1 / 2)");
                     break;
                 }
         }
-
+            sc.close();
     } 
 }
 /*

@@ -1,0 +1,72 @@
+
+
+
+import java.util.ArrayList;
+
+public class MaxPriorityQueue {
+  ArrayList<Integer> heap;
+    
+    int removeMax() {
+		// Complete this function
+      if(heap.isEmpty()) {
+        return Integer.MIN_VALUE;
+      }
+      
+       int temp = heap.get(0);
+		heap.set(0, heap.get(heap.size() - 1));
+		heap.remove(heap.size() - 1);
+		
+		int index = 0;
+		int leftChildIndex = 2 * index + 1;
+		int rightChildIndex = 2 * index + 2;
+		
+		int maxIndex = index;
+		
+		while(leftChildIndex < getSize()) {
+			if(heap.get(leftChildIndex) > heap.get(maxIndex)) {
+				maxIndex = leftChildIndex;
+			}
+			
+			if(rightChildIndex < getSize() && heap.get(rightChildIndex) > heap.get(maxIndex)) {
+				maxIndex = rightChildIndex;
+			}
+			
+			if (maxIndex != index) {
+				int temp2 = heap.get(maxIndex);
+				heap.set(maxIndex, heap.get(index));
+				heap.set(index, temp2);
+				index = maxIndex;
+				leftChildIndex = 2 * index + 1;
+				rightChildIndex = 2 * index + 2;
+			} else {
+				break;
+			}
+		}
+		return temp;
+    }
+    
+    
+    public MaxPriorityQueue() {
+		heap = new ArrayList<>();
+	}
+	
+	public boolean isEmpty() {
+		return heap.size() == 0;
+	}
+	
+	int getSize() {
+		return heap.size();
+	}
+	
+	int getMax() {
+		if(isEmpty()) {
+			//throw exception
+			return Integer.MIN_VALUE;
+		}
+		return heap.get(0);
+	}
+        
+        
+	
+}
+

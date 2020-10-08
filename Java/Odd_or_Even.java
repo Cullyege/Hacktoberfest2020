@@ -17,5 +17,15 @@ class CheckEvenOdd
         System.out.println("Entered number is even");
      else
         System.out.println("Entered number is odd");
+
+    /*
+     * Another way to check if a number is odd or even is to use Bits 
+     * A number (say 5, which is odd) when AND with 1 gives 1. 
+     * Whereas an even number will give 0.
+     * This method is a little faster than using Modulo operator as it works 
+     * directly on bits.
+     */
+    if ((num & 1) == 1) System.out.println("Entered Number is Odd");
+    else System.out.println("Entered number is Even");  
   }
 }
