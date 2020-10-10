@@ -1,0 +1,47 @@
+//implementation of queue data stucture using linked list
+#include<iostream>
+using namespace std;
+
+//declaring a node class
+class Qnode
+{
+  int Data;
+  Qnode *next;
+  Qnode                                                   //declaring a default constructor for the node class
+  {
+    data=0;
+    *next=NULL;
+  }
+};
+
+class Queue                                             //declaring class for queue
+{
+	public:
+		
+               Qnode *front,*rear;
+                 Qnode
+                      {
+                         front=rear=NULL;
+                      }
+            void enqueue(int x)
+	    {
+	         Qnode *temp=new Qnode(x);   //creating a new linkedlist node pointed by a pointer named temp
+		if (rear==NULL)       
+		{
+		  front=rear=temp;         //condition of empty queue
+		}	
+		rear->next=temp;           //adding new node to end of the queue
+		rear=temp;
+	    }
+	    void dequeue(int x)
+	    {
+	       //if queue is empty
+			if (front = NULL)
+				cout << "queue empty";
+			Qnode* temp = front;
+			front = fron->next;
+			if (front == NULL)
+				rear = NULL;
+			delete (temp);
+	    }
+};
