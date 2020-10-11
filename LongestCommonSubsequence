@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
+// Recursive approach
 int subse(char *x,char *y,int m,int n)
 {
 	if(m==0 || n==0)
