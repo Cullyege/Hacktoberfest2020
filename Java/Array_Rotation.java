@@ -2,44 +2,44 @@
 import  java.util.Scanner;
 class Array_Rotation
 {
-    private static void leftRotate(int arr[], int n) 
+    private static void leftRotate(int a[], int n) 
     { 
-        int temp = arr[0], i; 
+        int temp = a[0], i; 
         // shifting all the elements of the array to left
         for (i = 0; i < n - 1; i++) 
-            arr[i] = arr[i + 1]; 
+            a[i] = arr[i + 1]; 
 
-        arr[i] = temp; 
+        a[i] = temp; 
     } 
 
-    private static void rightRotate(int arr[], int n)
+    private static void rightRotate(int a[], int n)
     {
-        int temp = arr[n-1], i;
+        int temp = a[n-1], i;
         // shifting all the elements of the array to right
         for (i = n-1; i > 0; i--)
-            arr[i] = arr[i - 1];
+            a[i] = a[i - 1];
 
-        arr[0] = temp;
+        a[0] = temp;
     }
-    private static void RotateArrayLeft(int arr[], int rotations, int n) 
+    private static void RotateArrayLeft(int a[], int rotations, int n) 
     { 
         // call for rotation one by one
         for (int i = 0; i < rotations; i++) 
-            leftRotate(arr, n); 
+            leftRotate(a, n); 
 
         // print the array
         for (int i = 0; i < n; i++) 
-            System.out.print(arr[i] + " ");    
+            System.out.print(a[i] + " ");    
     } 
-    private static void RotateArrayRight(int arr[], int rotations, int n) 
+    private static void RotateArrayRight(int a[], int rotations, int n) 
     { 
         // call for rotation one by one
         for (int i = 0; i < rotations; i++) 
-            rightRotate(arr, n); 
+            rightRotate(a, n); 
 
         // print the array
         for (int i = 0; i < n; i++) 
-            System.out.print(arr[i] + " ");    
+            System.out.print(a[i] + " ");    
     } 
 
     public static void main(String args[]) 
@@ -50,9 +50,9 @@ class Array_Rotation
         int n=sc.nextInt();
         System.out.println("Enter "+ n +" elements");
         //declare an array that has n elements in it
-        int a[] = new int[n];
+        int a1[] = new int[n];
         for(int i = 0; i < n; i++)
-            a[i] = sc.nextInt();
+            a1[i] = sc.nextInt();
         System.out.println("Enter number of rotations -");
         int d = sc.nextInt();
         System.out.println("To rotate left press 1,\nTo rotate right press 2");
@@ -62,12 +62,12 @@ class Array_Rotation
         {
             case 1:
                 {
-                    RotateArrayLeft(a, d, n);
+                    RotateArrayLeft(a1, d, n);
                     break;
                 }
             case 2:
                 {
-                    RotateArrayRight(a, d, n);
+                    RotateArrayRight(a1, d, n);
                     break;
                 }
             default:
