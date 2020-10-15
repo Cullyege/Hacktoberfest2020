@@ -21,11 +21,11 @@ public class ARRAY {
 		System.out.println(" size? ");
 		int n = scn.nextInt();
 
-		int[] arr = new int[n];
+		int[] a = new int[n];
 
-		for(int i = 0; i < arr.length; i++) {
+		for(int i = 0; i < a.length; i++) {
 			System.out.println("enter the value for " + i + " index");
-			arr[i] = scn.nextInt();
+			a[i] = scn.nextInt();
 		}
 		return arr;
 	}
@@ -39,12 +39,12 @@ public class ARRAY {
 
   public static int maxInArray(int[] arr) {
 		//10,5,20,30,25
-		int max = Integer.MIN_VALUE;
+		int m = Integer.MIN_VALUE;
 
 		for(int i = 0; i < arr.length; i ++) {
-			if(arr[i] > max) {
-				max = arr[i];
+			if(arr[i] > m) {
+				m = arr[i];
 			}
 		}
-		return max;
+		return m;
 	}
