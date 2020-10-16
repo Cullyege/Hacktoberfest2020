@@ -1,53 +1,41 @@
-public class BubbleSort {
+// Bubble Short Algorithm in java
+public class BubbleSortExample 
+{
+    public static void main(String[] args) 
+    {
+    
+        Integer[] array = new Integer[] { 12, 13, 24, 10, 3, 6, 90, 70 };
  
-	public static void main(String[] args)
-	{  
-		int arr[] ={860,8,200,9};  
+      
+        bubbleSort(array, 0, array.length);
  
-		System.out.println("---Array BEFORE Bubble Sort---"); 
-		
-	    printArray(arr);
+     
+        System.out.println(Arrays.toString(array));
+    }
  
-		bubbleSort(arr);//sorting array elements using bubble sort  
- 
-		System.out.println("---Array AFTER Bubble Sort---");  
-		
-		printArray(arr); 
- 
-	}  
- 	static void bubbleSort(int[] array)
-	{  
-		int n = array.length;  
-		int temp = 0;  
-		for(int i=0; i < n; i++) // Iterating through the array length
-		{  System.out.println("Sort Pass Number "+(i+1)); 
-			for(int j=1; j < (n-i); j++)
-			{  
-			    System.out.println("Comparing "+ array[j-1]+ " and " + array[j]);    
-				if(array[j-1] > array[j])
-				{   
-				    
-					//swap elements  
-					temp = array[j-1];  
-					array[j-1] = array[j];  
-					array[j] = temp;  
-				    System.out.println(array[j]  + " is greater than " + array[j-1]);
-				    System.out.println("Swapping Elements: New Array After Swap");
-					printArray(array);
-				}  
- 
-			}  
-		}  
- 
-	} 
-	
-	static void printArray(int[] array){
-	    
-	    for(int i=0; i < array.length; i++)
-		{  
-			System.out.print(array[i] + " ");  
-		} 
-	    System.out.println();
-	    
-	}
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    public static void bubbleSort(Object[] array, int fromIndex, int toIndex) 
+    {
+        Object d;
+        for (int i = toIndex - 1; i > fromIndex; i--) 
+        {
+            boolean isSorted = true;
+            for (int j = fromIndex; j < i; j++) 
+            {
+                //If elements in wrong order then swap them
+                if (((Comparable) array[j]).compareTo(array[j + 1]) > 0) 
+                {
+                    isSorted = false;
+                    d = array[j + 1];
+                    array[j + 1] = array[j];
+                    array[j] = d;
+                }
+            }
+            //If no swapping then array is already sorted
+            if (isSorted)
+                break;
+        }
+    }
 }
+ 
+// Output: [3, 6, 10, 12, 13, 24, 70, 90]
