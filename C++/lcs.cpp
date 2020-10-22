@@ -2,10 +2,9 @@
 // Length of Longest Common Subtring of two strings.
 #include <bits/stdc++.h>
 using namespace std;
-
-int lcs(const string &s1, const string &s2)
+int lcs(const string &s1,const string &s2)
 {
-	vector<vector<int>> dp(s1.length() + 1, vector<int>(s2.length() + 1));
+	vector<vector<int>> dp(s1.length() + 1,vector<int>(s2.length() + 1));
 	int maxLength = 0;
 	for (int i = 1; i <= s1.length(); i++)
 	{
@@ -34,7 +33,6 @@ int main()
 
 	cout << "Length of LCS is "
 	     << lcs( str1, str2, m, n );
-
 	return 0;
 }
 
