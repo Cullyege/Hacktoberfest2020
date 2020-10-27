@@ -1,13 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 int main()
 {
-    int a,b;
-    cout<<"enter number: ";
-    cin>>a>>b;
-    a=a*b;
-    b=a/b;
-    a=a/b;
-    cout<<"the number after swapping: "<<a<<" "<<b;
+    int a = 5, b = 10, temp;
+
+    cout << "Before swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "\nAfter swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
     return 0;
 }
