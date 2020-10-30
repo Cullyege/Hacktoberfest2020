@@ -1,41 +1,70 @@
-// A dynamic programming CPP program to find
-// Length of Longest Common Subtring of two strings.
 #include <bits/stdc++.h>
-using namespace std;
 
-int lcs(const string &s1, const string &s2)
+using namespace std;
+int maxi(int a, int b)
 {
-	vector<vector<int>> dp(s1.length() + 1, vector<int>(s2.length() + 1));
-	int maxLength = 0;
-	for (int i = 1; i <= s1.length(); i++)
-	{
-		for (int j = 1; j <= s2.length(); j++)
-		{
-			if (s1[i - 1] == s2[j - 1])
-			{
-				dp[i][j] = 1 + dp[i - 1][j - 1];
-				maxLength = max(maxLength, dp[i][j]);
-			}
-		}
-	}
-	return maxLength;
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+int lns(int *a, int *b, int n, int m)
+{
+    int lcs[n + 1][m + 1];
+    for (int i = 0; i <= n; i++)
+    {
+        for (int j = 0; j <= m; j++)
+        {
+            if (i == 0 || j == 0)
+                lcs[i][j] = 0;
+            else if (a[i - 1] == b[j - 1])
+            {
+                lcs[i][j] = lcs[i - 1][j - 1] + 1;
+            }
+            else
+            {
+                lcs[i][j] = max(lcs[i - 1][j], lcs[i][j - 1]);
+            }
+        }
+    }
+    int index = lcs[n][m];
+    vector<int> res(index);
+    int i = n, j = m;
+    while (i > 0 && j > 0)
+    {
+        if (a[i - 1] == b[j - 1])
+        {
+            res[index - 1] = a[i - 1];
+            i--;
+            j--;
+            index--;
+        }
+        else if (lcs[i - 1][j] > lcs[i][j - 1])
+        {
+            i--;
+        }
+        else
+        {
+            j--;
+        }
+    }
+    for (auto x : res)
+    {
+        cout << x;
+    }
+    cout << endl;
+    return lcs[n][m];
 }
 
-// Driver Code
 int main()
 {
-	string str1, str2;
-	cout << "Enter First String: ";
-	cin >> str1;
-	cout << "Enter Second String: ";
-	cin >> str2;
-	int m = str1.size();
-	int n = str2.size();
-
-	cout << "Length of LCS is "
-	     << lcs( str1, str2, m, n );
-
-	return 0;
+    int n, m;
+    cin >> n >> m;
+    int a[n], b[m];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    for (int i = 0; i < m; i++)
+        cin >> b[i];
+    int k = lns(a, b, n, m);
+    cout << k;
 }
-
-// This code is contributed by Bhanu Pratap Singh
